@@ -1,5 +1,7 @@
 from fastapi import Header, HTTPException, status
 
+from app.db.session import get_db
+
 
 def get_current_user_id(x_user_id: str | None = Header(default=None)) -> str:
     if not x_user_id:
@@ -9,3 +11,5 @@ def get_current_user_id(x_user_id: str | None = Header(default=None)) -> str:
         )
     return x_user_id
 
+
+__all__ = ["get_current_user_id", "get_db"]
