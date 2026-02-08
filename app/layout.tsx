@@ -1,5 +1,6 @@
 import React from "react"
 import type { Metadata, Viewport } from "next"
+import { DM_Sans, Space_Mono } from "next/font/google"
 import { Navbar } from "@/components/navbar"
 import { MobileNav } from "@/components/mobile-nav"
 import { PageTransition } from "@/components/page-transition"
@@ -18,6 +19,17 @@ export const viewport: Viewport = {
   initialScale: 1,
 }
 
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-dm-sans",
+})
+
+const spaceMono = Space_Mono({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-space-mono",
+})
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -25,7 +37,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-sans antialiased bg-background text-foreground">
+      <body
+        className={`${dmSans.variable} ${spaceMono.variable} font-sans antialiased bg-background text-foreground`}
+      >
         <Navbar />
         <main className="pb-20 md:pb-0">
           <PageTransition>{children}</PageTransition>
