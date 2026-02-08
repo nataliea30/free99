@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server"
-import { appendMessage, findUserBySession, markConversationRead } from "@/lib/demo-db"
+import { appendMessage, findUserBySession, markConversationRead } from "@/lib/postgres-db"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"

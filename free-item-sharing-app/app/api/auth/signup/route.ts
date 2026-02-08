@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server"
-import { createSession, createUser } from "@/lib/demo-db"
+import { createSession, createUser } from "@/lib/postgres-db"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"

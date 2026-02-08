@@ -4,7 +4,7 @@ import {
   findListingById,
   findUserBySession,
   updateListing,
-} from "@/lib/demo-db"
+} from "@/lib/postgres-db"
 import type { Listing } from "@/lib/types"
 
 export const runtime = "nodejs"

@@ -6,7 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "db:setup": "node ./scripts/setup-db.js",
+    "db:reset": "node ./scripts/reset-db.js",
+    "db:import-demo": "node ./scripts/import-demo-data.js",
+    "db:migrate-demo": "npm run db:reset && npm run db:import-demo",
+    "db:deploy": "npm run db:setup"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -47,6 +52,7 @@
     "lucide-react": "^0.544.0",
     "next": "16.1.6",
     "next-themes": "^0.4.6",
+    "pg": "^8.13.1",
     "react": "^19",
     "react-day-picker": "8.10.1",
     "react-dom": "^19",

@@ -3,7 +3,7 @@ import {
   createConversationForListing,
   findUserBySession,
   listConversationsForUser,
-} from "@/lib/demo-db"
+} from "@/lib/postgres-db"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"

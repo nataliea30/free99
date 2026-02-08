@@ -255,9 +255,45 @@
       "bio": "",
       "createdAt": "2026-02-08T04:47:22.660Z",
       "password": "password"
+    },
+    {
+      "id": "f86a64e3-e38e-4388-b845-238927412282",
+      "email": "john@gatech.edu",
+      "name": "John",
+      "avatarUrl": "",
+      "university": {
+        "id": "uni-1",
+        "name": "Georgia Institute of Technology",
+        "emailDomain": "gatech.edu"
+      },
+      "tags": [],
+      "bio": "",
+      "createdAt": "2026-02-08T05:54:33.763Z",
+      "password": "password"
     }
   ],
   "listings": [
+    {
+      "id": "7209d317-9d33-4982-9433-f99a6a170089",
+      "title": "Brita filter",
+      "description": "Brita filter in good condition. DM for info",
+      "images": [],
+      "category": "Kitchen",
+      "condition": "Good",
+      "tags": [
+        {
+          "id": "t4",
+          "label": "Dorm: North Ave",
+          "type": "Dorm"
+        }
+      ],
+      "status": "Claimed",
+      "location": "Centennial roundabout",
+      "sellerId": "87626eb3-f0ef-4bc4-9bb8-7bfce39e5249",
+      "claimedById": "f86a64e3-e38e-4388-b845-238927412282",
+      "createdAt": "2026-02-08T05:53:32.570Z",
+      "expiresAt": "2026-03-10T05:53:32.570Z"
+    },
     {
       "id": "l1",
       "title": "Blue Futon Couch",
@@ -714,9 +750,52 @@
       "token": "adddf324-29d0-46f2-9b04-c997a513758f",
       "userId": "c67125fd-00fd-4ee7-b6f8-145058345d3a",
       "createdAt": "2026-02-08T05:22:06.963Z"
+    },
+    {
+      "token": "c5e664c0-adc5-4a25-8135-5c90ba7235f1",
+      "userId": "87626eb3-f0ef-4bc4-9bb8-7bfce39e5249",
+      "createdAt": "2026-02-08T05:52:08.035Z"
+    },
+    {
+      "token": "2abfcab4-4def-44f3-9e9d-a9d16de7d77f",
+      "userId": "f86a64e3-e38e-4388-b845-238927412282",
+      "createdAt": "2026-02-08T05:54:33.765Z"
+    },
+    {
+      "token": "ccbfe2c2-43ac-4ff8-be2e-3b2094edb84f",
+      "userId": "87626eb3-f0ef-4bc4-9bb8-7bfce39e5249",
+      "createdAt": "2026-02-08T05:55:00.600Z"
     }
   ],
   "conversations": [
+    {
+      "id": "0c93e3a7-b715-47d5-b44b-43d9c0a7ba4b",
+      "listingId": "7209d317-9d33-4982-9433-f99a6a170089",
+      "participantIds": [
+        "87626eb3-f0ef-4bc4-9bb8-7bfce39e5249",
+        "f86a64e3-e38e-4388-b845-238927412282"
+      ],
+      "messages": [
+        {
+          "id": "cba3a3d9-b0ef-4878-81ee-aee60db3210f",
+          "conversationId": "0c93e3a7-b715-47d5-b44b-43d9c0a7ba4b",
+          "senderId": "f86a64e3-e38e-4388-b845-238927412282",
+          "body": "I want this!",
+          "attachments": [],
+          "read": true,
+          "createdAt": "2026-02-08T05:54:49.720Z"
+        },
+        {
+          "id": "b8d64bc8-d3fc-4458-a875-378d1d4110d9",
+          "conversationId": "0c93e3a7-b715-47d5-b44b-43d9c0a7ba4b",
+          "senderId": "87626eb3-f0ef-4bc4-9bb8-7bfce39e5249",
+          "body": "its yours!",
+          "attachments": [],
+          "read": false,
+          "createdAt": "2026-02-08T05:55:16.636Z"
+        }
+      ]
+    },
     {
       "id": "98d097dc-786c-4ceb-85fe-abf40c747fb4",
       "listingId": "l4",

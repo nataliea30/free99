@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server"
-import { createListing, findUserBySession, listListings } from "@/lib/demo-db"
+import { createListing, findUserBySession, listListings } from "@/lib/postgres-db"
 import type { Listing } from "@/lib/types"
 
 export const runtime = "nodejs"

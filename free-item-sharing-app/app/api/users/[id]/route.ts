@@ -4,8 +4,8 @@ import {
   findUserBySession,
   listListings,
   updateUserProfile,
-} from "@/lib/demo-db"
-import type { Tag } from "@/lib/types"
+} from "@/lib/postgres-db"
+import type { Listing, Tag } from "@/lib/types"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -35,7 +35,7 @@ export async function GET(
     return NextResponse.json({ error: "User not found" }, { status: 404 })
   }
 
-  const listings = await listListings()
+  const listings: Listing[] = await listListings()
   const userListings = listings.filter((listing) => listing.seller.id === user.id)
   const canViewClaimed = sessionUser?.id === user.id
   const claimedListings = canViewClaimed

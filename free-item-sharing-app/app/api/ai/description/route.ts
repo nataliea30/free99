@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server"
-import { findUserBySession } from "@/lib/demo-db"
+import { findUserBySession } from "@/lib/postgres-db"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
