@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useRef, useState } from "react"
+import React, { Suspense, useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Send, ArrowLeft, CheckCheck, ImageIcon } from "lucide-react"
@@ -189,7 +189,7 @@ function MessageBubble({
   )
 }
 
-export default function MessagesPage() {
+function MessagesPageContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const fileInputRef = useRef<HTMLInputElement | null>(null)
@@ -687,5 +687,19 @@ export default function MessagesPage() {
         )}
       </div>
     </div>
+  )
+}
+
+export default function MessagesPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex flex-col items-center justify-center min-h-[60vh] text-center px-4">
+          <p className="text-sm text-muted-foreground">Loading messages…</p>
+        </div>
+      }
+    >
+      <MessagesPageContent />
+    </Suspense>
   )
 }
