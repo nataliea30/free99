@@ -32,6 +32,8 @@ pnpm install
 pnpm run db:migrate-demo
 ```
 
+`db:migrate-demo` now runs reset -> setup -> import in order.
+
 Useful DB commands:
 
 ```bash
@@ -40,6 +42,9 @@ pnpm run db:setup
 
 # DANGEROUS: drops all app tables
 pnpm run db:reset
+
+# Recreate schema tables/indexes (safe)
+pnpm run db:setup
 
 # Imports data/demo-db.json into current DATABASE_URL
 pnpm run db:import-demo

@@ -10,7 +10,7 @@
     "db:setup": "node ./scripts/setup-db.js",
     "db:reset": "node ./scripts/reset-db.js",
     "db:import-demo": "node ./scripts/import-demo-data.js",
-    "db:migrate-demo": "npm run db:reset && npm run db:import-demo",
+    "db:migrate-demo": "npm run db:reset && npm run db:setup && npm run db:import-demo",
     "db:deploy": "npm run db:setup"
   },
   "dependencies": {
