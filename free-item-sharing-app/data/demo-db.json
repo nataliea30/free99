@@ -1,0 +1,888 @@
+{
+  "users": [
+    {
+      "id": "u1",
+      "email": "alex.rivera@gatech.edu",
+      "name": "Alex Rivera",
+      "avatarUrl": "",
+      "university": {
+        "id": "uni-1",
+        "name": "Georgia Institute of Technology",
+        "emailDomain": "gatech.edu"
+      },
+      "tags": [
+        {
+          "id": "t4",
+          "label": "Dorm: North Ave",
+          "type": "Dorm"
+        },
+        {
+          "id": "t2",
+          "label": "Will Deliver",
+          "type": "Preference"
+        }
+      ],
+      "bio": "CS major, graduating in May. Clearing out my dorm!",
+      "createdAt": "2025-08-20T00:00:00Z",
+      "password": "password"
+    },
+    {
+      "id": "u2",
+      "email": "jordan.lee@gatech.edu",
+      "name": "Jordan Lee",
+      "avatarUrl": "",
+      "university": {
+        "id": "uni-1",
+        "name": "Georgia Institute of Technology",
+        "emailDomain": "gatech.edu"
+      },
+      "tags": [
+        {
+          "id": "t5",
+          "label": "Dorm: West Village",
+          "type": "Dorm"
+        },
+        {
+          "id": "t1",
+          "label": "Pickup Only",
+          "type": "Preference"
+        }
+      ],
+      "bio": "Pre-med student. Love finding free stuff on campus.",
+      "createdAt": "2025-09-01T00:00:00Z",
+      "password": "password"
+    },
+    {
+      "id": "u3",
+      "email": "sam.patel@gatech.edu",
+      "name": "Sam Patel",
+      "avatarUrl": "",
+      "university": {
+        "id": "uni-1",
+        "name": "Georgia Institute of Technology",
+        "emailDomain": "gatech.edu"
+      },
+      "tags": [
+        {
+          "id": "t6",
+          "label": "Dorm: Glenn Hall",
+          "type": "Dorm"
+        },
+        {
+          "id": "t2",
+          "label": "Will Deliver",
+          "type": "Preference"
+        }
+      ],
+      "bio": "Engineering student. Always looking for monitors and tech.",
+      "createdAt": "2025-09-15T00:00:00Z",
+      "password": "password"
+    },
+    {
+      "id": "u4",
+      "email": "maya.chen@gatech.edu",
+      "name": "Maya Chen",
+      "avatarUrl": "",
+      "university": {
+        "id": "uni-1",
+        "name": "Georgia Institute of Technology",
+        "emailDomain": "gatech.edu"
+      },
+      "tags": [
+        {
+          "id": "t4",
+          "label": "Dorm: North Ave",
+          "type": "Dorm"
+        },
+        {
+          "id": "t1",
+          "label": "Pickup Only",
+          "type": "Preference"
+        }
+      ],
+      "bio": "Art major. Downsizing my collection.",
+      "createdAt": "2025-10-01T00:00:00Z",
+      "password": "password"
+    },
+    {
+      "id": "u5",
+      "email": "taylor.brooks@uga.edu",
+      "name": "Taylor Brooks",
+      "avatarUrl": "",
+      "university": {
+        "id": "uni-2",
+        "name": "University of Georgia",
+        "emailDomain": "uga.edu"
+      },
+      "tags": [
+        {
+          "id": "t9",
+          "label": "Dorm: Myers Hall",
+          "type": "Dorm"
+        },
+        {
+          "id": "t2",
+          "label": "Will Deliver",
+          "type": "Preference"
+        }
+      ],
+      "bio": "Junior at UGA. Clearing out my dorm before summer!",
+      "createdAt": "2025-08-15T00:00:00Z",
+      "password": "password"
+    },
+    {
+      "id": "u6",
+      "email": "morgan.hayes@uga.edu",
+      "name": "Morgan Hayes",
+      "avatarUrl": "",
+      "university": {
+        "id": "uni-2",
+        "name": "University of Georgia",
+        "emailDomain": "uga.edu"
+      },
+      "tags": [
+        {
+          "id": "t10",
+          "label": "Dorm: Brumby Hall",
+          "type": "Dorm"
+        },
+        {
+          "id": "t1",
+          "label": "Pickup Only",
+          "type": "Preference"
+        }
+      ],
+      "bio": "Biology major, dog lover. Go Dawgs!",
+      "createdAt": "2025-09-10T00:00:00Z",
+      "password": "password"
+    },
+    {
+      "id": "u7",
+      "email": "casey.wright@uga.edu",
+      "name": "Casey Wright",
+      "avatarUrl": "",
+      "university": {
+        "id": "uni-2",
+        "name": "University of Georgia",
+        "emailDomain": "uga.edu"
+      },
+      "tags": [
+        {
+          "id": "t11",
+          "label": "Dorm: Russell Hall",
+          "type": "Dorm"
+        },
+        {
+          "id": "t2",
+          "label": "Will Deliver",
+          "type": "Preference"
+        }
+      ],
+      "bio": "Journalism student. Downsizing before I move off campus.",
+      "createdAt": "2025-10-05T00:00:00Z",
+      "password": "password"
+    },
+    {
+      "id": "c67125fd-00fd-4ee7-b6f8-145058345d3a",
+      "email": "nanwar8@gatech.edu",
+      "name": "Natalie",
+      "avatarUrl": "",
+      "university": {
+        "id": "uni-1",
+        "name": "Georgia Institute of Technology",
+        "emailDomain": "gatech.edu"
+      },
+      "tags": [],
+      "bio": "",
+      "createdAt": "2026-02-08T04:05:03.879Z",
+      "password": "password123"
+    },
+    {
+      "id": "e6078fc6-3563-4d2a-94a5-5b4521ffdcd1",
+      "email": "Gbran@uga.edu",
+      "name": "Geneva",
+      "avatarUrl": "",
+      "university": {
+        "id": "uni-2",
+        "name": "University of Georgia",
+        "emailDomain": "uga.edu"
+      },
+      "tags": [],
+      "bio": "",
+      "createdAt": "2026-02-08T04:14:41.911Z",
+      "password": "password123"
+    },
+    {
+      "id": "653733e4-8650-4c9c-9473-495cd72081b6",
+      "email": "ntran@gatech.edu",
+      "name": "Nick",
+      "avatarUrl": "",
+      "university": {
+        "id": "uni-1",
+        "name": "Georgia Institute of Technology",
+        "emailDomain": "gatech.edu"
+      },
+      "tags": [],
+      "bio": "",
+      "createdAt": "2026-02-08T04:16:26.671Z",
+      "password": "password123"
+    },
+    {
+      "id": "d4d7b617-2c74-4a69-8c9f-61f12ab86454",
+      "email": "gbrannon6@gatech.edu",
+      "name": "Geneva",
+      "university": {
+        "id": "uni-1",
+        "name": "Georgia Institute of Technology",
+        "emailDomain": "gatech.edu"
+      },
+      "tags": [],
+      "bio": "So happy this website exists!",
+      "createdAt": "2026-02-08T04:47:00.077Z",
+      "password": "Wdw2006!7189!11"
+    },
+    {
+      "id": "87626eb3-f0ef-4bc4-9bb8-7bfce39e5249",
+      "email": "henry@gatech.edu",
+      "name": "Henry",
+      "avatarUrl": "",
+      "university": {
+        "id": "uni-1",
+        "name": "Georgia Institute of Technology",
+        "emailDomain": "gatech.edu"
+      },
+      "tags": [],
+      "bio": "",
+      "createdAt": "2026-02-08T04:47:22.660Z",
+      "password": "password"
+    }
+  ],
+  "listings": [
+    {
+      "id": "l1",
+      "title": "Blue Futon Couch",
+      "description": "Super comfy futon, folds flat into a bed. Some minor wear on the armrests but still in great condition. Perfect for a dorm or apartment living room. I'm moving out and can't take it with me.",
+      "images": [
+        "/listings/couch.jpg"
+      ],
+      "category": "Furniture",
+      "condition": "Good",
+      "tags": [
+        {
+          "id": "t1",
+          "label": "Pickup Only",
+          "type": "Preference"
+        },
+        {
+          "id": "t3",
+          "label": "Heavy Item",
+          "type": "Custom"
+        }
+      ],
+      "status": "Available",
+      "location": "Outside North Ave lobby",
+      "sellerId": "u1",
+      "claimedById": null,
+      "createdAt": "2026-01-28T14:30:00Z",
+      "expiresAt": "2026-02-27T14:30:00Z"
+    },
+    {
+      "id": "l2",
+      "title": "Calculus & Biology Textbooks",
+      "description": "Bundle of 3 textbooks: Calculus Early Transcendentals (8th ed), Campbell Biology (12th ed), and Organic Chemistry (5th ed). Some highlighting but pages are clean. Save hundreds on these!",
+      "images": [
+        "/listings/textbooks.jpg"
+      ],
+      "category": "Textbooks",
+      "condition": "Like New",
+      "tags": [
+        {
+          "id": "t2",
+          "label": "Will Deliver",
+          "type": "Preference"
+        }
+      ],
+      "status": "Available",
+      "location": "Crosland Tower front desk",
+      "sellerId": "u2",
+      "claimedById": null,
+      "createdAt": "2026-02-01T09:00:00Z",
+      "expiresAt": "2026-03-03T09:00:00Z"
+    },
+    {
+      "id": "l3",
+      "title": "Modern Desk Lamp",
+      "description": "LED desk lamp with adjustable brightness and color temperature. USB charging port on the base. Used for one semester, works perfectly.",
+      "images": [
+        "/listings/lamp.jpg"
+      ],
+      "category": "Other",
+      "condition": "Like New",
+      "tags": [
+        {
+          "id": "t1",
+          "label": "Pickup Only",
+          "type": "Preference"
+        }
+      ],
+      "status": "Available",
+      "location": "Glenn Hall Room 412",
+      "sellerId": "u3",
+      "claimedById": null,
+      "createdAt": "2026-02-03T16:45:00Z",
+      "expiresAt": "2026-03-05T16:45:00Z"
+    },
+    {
+      "id": "l4",
+      "title": "Mechanical Keyboard",
+      "description": "Cherry MX Blue switches, full RGB lighting. Used for about a year. All keys work perfectly. Comes with original USB-C cable and keycap puller.",
+      "images": [
+        "/listings/keyboard.jpg"
+      ],
+      "category": "Electronics",
+      "condition": "Good",
+      "tags": [
+        {
+          "id": "t1",
+          "label": "Pickup Only",
+          "type": "Preference"
+        },
+        {
+          "id": "t8",
+          "label": "Must Go Today",
+          "type": "Custom"
+        }
+      ],
+      "status": "Available",
+      "location": "Klaus Building lobby",
+      "sellerId": "u1",
+      "claimedById": null,
+      "createdAt": "2026-02-04T11:20:00Z",
+      "expiresAt": "2026-03-06T11:20:00Z"
+    },
+    {
+      "id": "l5",
+      "title": "Denim Jacket - Size M",
+      "description": "Classic denim jacket, medium size. Barely worn, just not my style anymore. Great for Austin spring weather.",
+      "images": [
+        "/listings/jacket.jpg"
+      ],
+      "category": "Clothing",
+      "condition": "Like New",
+      "tags": [
+        {
+          "id": "t2",
+          "label": "Will Deliver",
+          "type": "Preference"
+        }
+      ],
+      "status": "Claimed",
+      "location": "West Village mailroom",
+      "sellerId": "u4",
+      "claimedById": "u2",
+      "createdAt": "2026-01-25T08:00:00Z",
+      "expiresAt": "2026-02-24T08:00:00Z"
+    },
+    {
+      "id": "l6",
+      "title": "Countertop Blender",
+      "description": "NutriBullet-style personal blender. Makes great smoothies. Comes with two cups and lids. Used for one semester.",
+      "images": [
+        "/listings/blender.jpg"
+      ],
+      "category": "Kitchen",
+      "condition": "Good",
+      "tags": [
+        {
+          "id": "t1",
+          "label": "Pickup Only",
+          "type": "Preference"
+        }
+      ],
+      "status": "Available",
+      "location": "North Ave kitchen area",
+      "sellerId": "u2",
+      "claimedById": null,
+      "createdAt": "2026-02-05T13:10:00Z",
+      "expiresAt": "2026-03-07T13:10:00Z"
+    },
+    {
+      "id": "l7",
+      "title": "24\" Dell Monitor",
+      "description": "Dell SE2422HX 24-inch monitor. 1080p, 75Hz. HDMI cable included. Perfect second monitor for your setup. Minor scratch on the bezel, screen is flawless.",
+      "images": [
+        "/listings/monitor.jpg"
+      ],
+      "category": "Electronics",
+      "condition": "Good",
+      "tags": [
+        {
+          "id": "t1",
+          "label": "Pickup Only",
+          "type": "Preference"
+        },
+        {
+          "id": "t3",
+          "label": "Heavy Item",
+          "type": "Custom"
+        }
+      ],
+      "status": "Available",
+      "location": "CULC building entrance",
+      "sellerId": "u3",
+      "claimedById": null,
+      "createdAt": "2026-02-06T10:00:00Z",
+      "expiresAt": "2026-03-08T10:00:00Z"
+    },
+    {
+      "id": "l8",
+      "title": "Small Wooden Bookshelf",
+      "description": "3-shelf bookshelf, about 3 feet tall. Solid wood, not particle board. Fits perfectly in a dorm room corner. Disassembles for easy transport.",
+      "images": [
+        "/listings/bookshelf.jpg"
+      ],
+      "category": "Furniture",
+      "condition": "Fair",
+      "tags": [
+        {
+          "id": "t1",
+          "label": "Pickup Only",
+          "type": "Preference"
+        },
+        {
+          "id": "t3",
+          "label": "Heavy Item",
+          "type": "Custom"
+        }
+      ],
+      "status": "Available",
+      "location": "Outside Glenn Hall",
+      "sellerId": "u4",
+      "claimedById": null,
+      "createdAt": "2026-02-02T15:30:00Z",
+      "expiresAt": "2026-03-04T15:30:00Z"
+    },
+    {
+      "id": "l9",
+      "title": "Mini Fridge - Great Condition",
+      "description": "Compact mini fridge, perfect for a dorm room. Fits under most desks. Has a small freezer compartment at the top. Used for two semesters, works perfectly. Just cleaned it out.",
+      "images": [
+        "/listings/fridge.jpg"
+      ],
+      "category": "Kitchen",
+      "condition": "Good",
+      "tags": [
+        {
+          "id": "t1",
+          "label": "Pickup Only",
+          "type": "Preference"
+        },
+        {
+          "id": "t3",
+          "label": "Heavy Item",
+          "type": "Custom"
+        }
+      ],
+      "status": "Available",
+      "location": "Myers Hall lobby",
+      "sellerId": "u5",
+      "claimedById": null,
+      "createdAt": "2026-01-30T10:00:00Z",
+      "expiresAt": "2026-03-01T10:00:00Z"
+    },
+    {
+      "id": "l10",
+      "title": "Psychology & Sociology Textbooks",
+      "description": "Intro to Psychology (Myers, 13th ed) and Principles of Sociology (Giddens). Both in great shape, minimal highlighting. Perfect for freshmen taking core classes.",
+      "images": [
+        "/listings/psych-textbooks.jpg"
+      ],
+      "category": "Textbooks",
+      "condition": "Like New",
+      "tags": [
+        {
+          "id": "t2",
+          "label": "Will Deliver",
+          "type": "Preference"
+        }
+      ],
+      "status": "Available",
+      "location": "Tate Student Center info desk",
+      "sellerId": "u6",
+      "claimedById": null,
+      "createdAt": "2026-02-01T11:30:00Z",
+      "expiresAt": "2026-03-03T11:30:00Z"
+    },
+    {
+      "id": "l11",
+      "title": "Yoga Mat + Resistance Bands Set",
+      "description": "Thick yoga mat (purple) and a set of 5 resistance bands with different tensions. Used for a semester of workout classes. Mat is clean and bands are in perfect shape.",
+      "images": [
+        "/listings/yoga-mat.jpg"
+      ],
+      "category": "Other",
+      "condition": "Good",
+      "tags": [
+        {
+          "id": "t1",
+          "label": "Pickup Only",
+          "type": "Preference"
+        }
+      ],
+      "status": "Available",
+      "location": "Ramsey Student Center entrance",
+      "sellerId": "u7",
+      "claimedById": null,
+      "createdAt": "2026-02-03T09:15:00Z",
+      "expiresAt": "2026-03-05T09:15:00Z"
+    },
+    {
+      "id": "l12",
+      "title": "Bean Bag Chair - Red",
+      "description": "Big comfy bean bag chair, red faux leather. Great for gaming or just chilling in your room. Cover is removable and washable. Barely used.",
+      "images": [
+        "/listings/beanbag.jpg"
+      ],
+      "category": "Furniture",
+      "condition": "Like New",
+      "tags": [
+        {
+          "id": "t1",
+          "label": "Pickup Only",
+          "type": "Preference"
+        },
+        {
+          "id": "t3",
+          "label": "Heavy Item",
+          "type": "Custom"
+        }
+      ],
+      "status": "Claimed",
+      "location": "Brumby Hall courtyard",
+      "sellerId": "u5",
+      "claimedById": "e6078fc6-3563-4d2a-94a5-5b4521ffdcd1",
+      "createdAt": "2026-02-04T14:00:00Z",
+      "expiresAt": "2026-03-06T14:00:00Z"
+    },
+    {
+      "id": "l13",
+      "title": "Bluetooth Speaker - JBL Clip",
+      "description": "JBL Clip 3 portable speaker, teal color. Clips onto a backpack. Great sound for its size. Battery holds charge well. Comes with charging cable.",
+      "images": [
+        "/listings/speaker.jpg"
+      ],
+      "category": "Electronics",
+      "condition": "Good",
+      "tags": [
+        {
+          "id": "t2",
+          "label": "Will Deliver",
+          "type": "Preference"
+        }
+      ],
+      "status": "Available",
+      "location": "Bolton Dining Commons",
+      "sellerId": "u6",
+      "claimedById": null,
+      "createdAt": "2026-02-05T16:45:00Z",
+      "expiresAt": "2026-03-07T16:45:00Z"
+    },
+    {
+      "id": "l14",
+      "title": "UGA Hoodie - Size L",
+      "description": "Classic red UGA hoodie, size large. Worn a handful of times, no stains or damage. Super cozy and warm. Go Dawgs!",
+      "images": [
+        "/listings/uga-hoodie.jpg"
+      ],
+      "category": "Clothing",
+      "condition": "Like New",
+      "tags": [
+        {
+          "id": "t2",
+          "label": "Will Deliver",
+          "type": "Preference"
+        }
+      ],
+      "status": "Claimed",
+      "location": "Russell Hall entrance",
+      "sellerId": "u7",
+      "claimedById": "u5",
+      "createdAt": "2026-01-27T08:30:00Z",
+      "expiresAt": "2026-02-26T08:30:00Z"
+    },
+    {
+      "id": "l15",
+      "title": "Desk Fan - Clip-on",
+      "description": "Small clip-on desk fan with 3 speed settings. USB powered so you can plug it into your laptop. Quiet and surprisingly powerful. Great for hot dorm rooms.",
+      "images": [
+        "/listings/desk-fan.jpg"
+      ],
+      "category": "Electronics",
+      "condition": "Good",
+      "tags": [
+        {
+          "id": "t1",
+          "label": "Pickup Only",
+          "type": "Preference"
+        },
+        {
+          "id": "t8",
+          "label": "Must Go Today",
+          "type": "Custom"
+        }
+      ],
+      "status": "Available",
+      "location": "Science Library front steps",
+      "sellerId": "u5",
+      "claimedById": null,
+      "createdAt": "2026-02-06T12:00:00Z",
+      "expiresAt": "2026-03-08T12:00:00Z"
+    }
+  ],
+  "sessions": [
+    {
+      "token": "62cb5cee-f34a-48de-a890-f10bf598c632",
+      "userId": "c67125fd-00fd-4ee7-b6f8-145058345d3a",
+      "createdAt": "2026-02-08T04:05:03.881Z"
+    },
+    {
+      "token": "01fbd212-a891-48e8-9aa8-ce1b6c4e66fe",
+      "userId": "c67125fd-00fd-4ee7-b6f8-145058345d3a",
+      "createdAt": "2026-02-08T04:05:14.799Z"
+    },
+    {
+      "token": "73903d19-c090-40ea-9018-889537e57ca4",
+      "userId": "c67125fd-00fd-4ee7-b6f8-145058345d3a",
+      "createdAt": "2026-02-08T04:10:20.013Z"
+    },
+    {
+      "token": "b9d0ec6c-84b0-4d4e-894c-accd64cb8a97",
+      "userId": "c67125fd-00fd-4ee7-b6f8-145058345d3a",
+      "createdAt": "2026-02-08T04:14:09.941Z"
+    },
+    {
+      "token": "2b372064-cb57-43b8-9dfa-5b655bb4d95c",
+      "userId": "e6078fc6-3563-4d2a-94a5-5b4521ffdcd1",
+      "createdAt": "2026-02-08T04:14:41.912Z"
+    },
+    {
+      "token": "1bcf89b4-5a99-493a-9de3-554b0b1158fe",
+      "userId": "653733e4-8650-4c9c-9473-495cd72081b6",
+      "createdAt": "2026-02-08T04:16:26.672Z"
+    },
+    {
+      "token": "fd162aef-0e34-49db-8059-abd1c0e89952",
+      "userId": "c67125fd-00fd-4ee7-b6f8-145058345d3a",
+      "createdAt": "2026-02-08T04:17:30.049Z"
+    },
+    {
+      "token": "cd43a03a-cf84-4c74-b4d2-74e45da83a5f",
+      "userId": "653733e4-8650-4c9c-9473-495cd72081b6",
+      "createdAt": "2026-02-08T04:21:23.325Z"
+    },
+    {
+      "token": "4ef73a76-c3b5-4841-803a-fd286240a395",
+      "userId": "e6078fc6-3563-4d2a-94a5-5b4521ffdcd1",
+      "createdAt": "2026-02-08T04:22:00.843Z"
+    },
+    {
+      "token": "55c8dd7d-7924-4e67-862d-2fc2b2f58ac3",
+      "userId": "c67125fd-00fd-4ee7-b6f8-145058345d3a",
+      "createdAt": "2026-02-08T04:24:14.303Z"
+    },
+    {
+      "token": "880ed3a6-230d-4298-b393-c231850318d9",
+      "userId": "653733e4-8650-4c9c-9473-495cd72081b6",
+      "createdAt": "2026-02-08T04:24:47.446Z"
+    },
+    {
+      "token": "56b4f75e-6139-4f46-b0f8-dac63ff2eabe",
+      "userId": "c67125fd-00fd-4ee7-b6f8-145058345d3a",
+      "createdAt": "2026-02-08T04:45:51.856Z"
+    },
+    {
+      "token": "6632589a-40ec-43b3-98b1-18ec6d7efcb9",
+      "userId": "d4d7b617-2c74-4a69-8c9f-61f12ab86454",
+      "createdAt": "2026-02-08T04:47:00.078Z"
+    },
+    {
+      "token": "cb90ee3f-728d-413d-8a32-ee9e5bebbf98",
+      "userId": "87626eb3-f0ef-4bc4-9bb8-7bfce39e5249",
+      "createdAt": "2026-02-08T04:47:22.662Z"
+    },
+    {
+      "token": "adddf324-29d0-46f2-9b04-c997a513758f",
+      "userId": "c67125fd-00fd-4ee7-b6f8-145058345d3a",
+      "createdAt": "2026-02-08T05:22:06.963Z"
+    }
+  ],
+  "conversations": [
+    {
+      "id": "98d097dc-786c-4ceb-85fe-abf40c747fb4",
+      "listingId": "l4",
+      "participantIds": [
+        "u1",
+        "87626eb3-f0ef-4bc4-9bb8-7bfce39e5249"
+      ],
+      "messages": []
+    },
+    {
+      "id": "ee3e295b-0ca6-49e8-b49e-5c63fc6ac06f",
+      "listingId": "ef7028b2-ac1f-4bbf-bb99-443285804b99",
+      "participantIds": [
+        "653733e4-8650-4c9c-9473-495cd72081b6",
+        "c67125fd-00fd-4ee7-b6f8-145058345d3a"
+      ],
+      "messages": [
+        {
+          "id": "09e874a3-3cde-45d8-8ab0-469e79584016",
+          "conversationId": "ee3e295b-0ca6-49e8-b49e-5c63fc6ac06f",
+          "senderId": "c67125fd-00fd-4ee7-b6f8-145058345d3a",
+          "body": "hi",
+          "attachments": [],
+          "read": false,
+          "createdAt": "2026-02-08T04:21:09.973Z"
+        },
+        {
+          "id": "bb344a7a-ff99-4a40-87bb-4f96112ad085",
+          "conversationId": "ee3e295b-0ca6-49e8-b49e-5c63fc6ac06f",
+          "senderId": "653733e4-8650-4c9c-9473-495cd72081b6",
+          "body": "hi",
+          "attachments": [],
+          "read": true,
+          "createdAt": "2026-02-08T04:21:38.523Z"
+        },
+        {
+          "id": "143c8657-9dc9-43c1-ad18-9ca0eac18113",
+          "conversationId": "ee3e295b-0ca6-49e8-b49e-5c63fc6ac06f",
+          "senderId": "653733e4-8650-4c9c-9473-495cd72081b6",
+          "body": "no",
+          "attachments": [],
+          "read": true,
+          "createdAt": "2026-02-08T04:31:01.904Z"
+        }
+      ]
+    },
+    {
+      "id": "ee4e0a93-3aec-43b2-986d-ad2363adac80",
+      "listingId": "l12",
+      "participantIds": [
+        "u5",
+        "e6078fc6-3563-4d2a-94a5-5b4521ffdcd1"
+      ],
+      "messages": [
+        {
+          "id": "2a8b4f40-e845-4f11-bb1f-b3b9147677f6",
+          "conversationId": "ee4e0a93-3aec-43b2-986d-ad2363adac80",
+          "senderId": "e6078fc6-3563-4d2a-94a5-5b4521ffdcd1",
+          "body": "hi",
+          "attachments": [],
+          "read": false,
+          "createdAt": "2026-02-08T04:15:25.430Z"
+        }
+      ]
+    },
+    {
+      "id": "c1",
+      "listingId": "l1",
+      "participantIds": [
+        "u1",
+        "u2"
+      ],
+      "messages": [
+        {
+          "id": "m1",
+          "conversationId": "c1",
+          "senderId": "u2",
+          "body": "Hey! Is the futon still available? I can pick it up today.",
+          "attachments": [],
+          "read": true,
+          "createdAt": "2026-02-05T10:00:00Z"
+        },
+        {
+          "id": "m2",
+          "conversationId": "c1",
+          "senderId": "u1",
+          "body": "Yes it is! I'll be at North Ave until 5pm today. Just come to the lobby and text me when you're here.",
+          "attachments": [],
+          "read": true,
+          "createdAt": "2026-02-05T10:05:00Z"
+        },
+        {
+          "id": "m3",
+          "conversationId": "c1",
+          "senderId": "u2",
+          "body": "Perfect, I'll be there around 3. Do you have a dolly or should I bring one?",
+          "attachments": [],
+          "read": false,
+          "createdAt": "2026-02-05T10:10:00Z"
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "listingId": "l4",
+      "participantIds": [
+        "u1",
+        "u3"
+      ],
+      "messages": [
+        {
+          "id": "m4",
+          "conversationId": "c2",
+          "senderId": "u3",
+          "body": "What switch type is the keyboard? And does it come with a wrist rest?",
+          "attachments": [],
+          "read": true,
+          "createdAt": "2026-02-05T14:00:00Z"
+        },
+        {
+          "id": "m5",
+          "conversationId": "c2",
+          "senderId": "u1",
+          "body": "Cherry MX Blues - they're clicky! No wrist rest unfortunately, just the board and cable.",
+          "attachments": [],
+          "read": true,
+          "createdAt": "2026-02-05T14:15:00Z"
+        }
+      ]
+    },
+    {
+      "id": "c3",
+      "listingId": "l5",
+      "participantIds": [
+        "u4",
+        "u2"
+      ],
+      "messages": [
+        {
+          "id": "m6",
+          "conversationId": "c3",
+          "senderId": "u2",
+          "body": "Love the jacket! Is it still available?",
+          "attachments": [],
+          "read": true,
+          "createdAt": "2026-01-26T09:00:00Z"
+        },
+        {
+          "id": "m7",
+          "conversationId": "c3",
+          "senderId": "u4",
+          "body": "Yes! Want to pick it up from West Village mailroom? I can leave it there for you.",
+          "attachments": [],
+          "read": true,
+          "createdAt": "2026-01-26T09:30:00Z"
+        },
+        {
+          "id": "m8",
+          "conversationId": "c3",
+          "senderId": "u2",
+          "body": "That would be amazing, thank you! I'll grab it this afternoon.",
+          "attachments": [],
+          "read": true,
+          "createdAt": "2026-01-26T10:00:00Z"
+        }
+      ]
+    }
+  ]
+}
