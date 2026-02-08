@@ -1,16 +1,7 @@
 import { NextResponse } from "next/server"
-import { randomUUID } from "node:crypto"
-import fs from "node:fs/promises"
-import path from "node:path"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
-
-const ensureUploadsDir = async () => {
-  const uploadsDir = path.join(process.cwd(), "public", "uploads")
-  await fs.mkdir(uploadsDir, { recursive: true })
-  return uploadsDir
-}
 
 export async function POST(request: Request) {
   try {
@@ -25,15 +16,14 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Only image uploads are allowed" }, { status: 400 })
     }
 
-    const uploadsDir = await ensureUploadsDir()
-    const ext = file.name.split(".").pop() || "jpg"
-    const filename = `${randomUUID()}.${ext}`
-    const filepath = path.join(uploadsDir, filename)
-
     const buffer = Buffer.from(await file.arrayBuffer())
-    await fs.writeFile(filepath, buffer)
+    const maxSizeBytes = 5 * 1024 * 1024
+    if (buffer.byteLength > maxSizeBytes) {
+      return NextResponse.json({ error: "Image must be 5MB or smaller" }, { status: 400 })
+    }
 
-    return NextResponse.json({ url: `/uploads/${filename}` })
+    const dataUrl = `data:${file.type};base64,${buffer.toString("base64")}`
+    return NextResponse.json({ url: dataUrl })
   } catch (error) {
     const message = error instanceof Error ? error.message : "Unable to upload image"
     return NextResponse.json({ error: message }, { status: 400 })
