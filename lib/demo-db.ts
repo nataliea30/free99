@@ -63,7 +63,10 @@ const dbPath = path.join(process.cwd(), "data", "demo-db.json")
 const dbStateId = "default"
 
 const hasPostgres = Boolean(process.env.DATABASE_URL)
-const globalForPg = globalThis as unknown as { __demoPgPool?: Pool }
+const globalForPg = globalThis as unknown as {
+  __demoPgPool?: Pool
+  __demoFallbackDb?: DemoDb
+}
 const pgPool =
   hasPostgres
     ? (globalForPg.__demoPgPool ??
@@ -202,7 +205,7 @@ const inflateConversation = (
   }
 }
 
-const seedDb = async (): Promise<DemoDb> => {
+const createSeedData = (): DemoDb => {
   const seedUsersWithPasswords = seedUsers.map((user) => toUserRecord(user))
   const seedListingRecords = seedListings.map((listing) => toListingRecord(listing))
   const seedConversationRecords = seedConversations.map((conversation) => ({
@@ -220,12 +223,29 @@ const seedDb = async (): Promise<DemoDb> => {
     })),
   }))
 
-  const data: DemoDb = {
+  return {
     users: seedUsersWithPasswords,
     listings: seedListingRecords,
     sessions: [],
     conversations: seedConversationRecords,
   }
+}
+
+const cloneDb = (data: DemoDb): DemoDb => JSON.parse(JSON.stringify(data)) as DemoDb
+
+const getFallbackDb = () => {
+  if (!globalForPg.__demoFallbackDb) {
+    globalForPg.__demoFallbackDb = createSeedData()
+  }
+  return cloneDb(globalForPg.__demoFallbackDb)
+}
+
+const setFallbackDb = (data: DemoDb) => {
+  globalForPg.__demoFallbackDb = cloneDb(data)
+}
+
+const seedDb = async (): Promise<DemoDb> => {
+  const data = createSeedData()
 
   if (hasPostgres && pgPool) {
     await pgPool.query(`
@@ -253,21 +273,25 @@ const seedDb = async (): Promise<DemoDb> => {
 
 const readDb = async (): Promise<DemoDb> => {
   if (hasPostgres && pgPool) {
-    await pgPool.query(`
-      CREATE TABLE IF NOT EXISTS app_state (
-        id TEXT PRIMARY KEY,
-        data JSONB NOT NULL,
-        updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    try {
+      await pgPool.query(`
+        CREATE TABLE IF NOT EXISTS app_state (
+          id TEXT PRIMARY KEY,
+          data JSONB NOT NULL,
+          updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+        )
+      `)
+      const result = await pgPool.query<{ data: DemoDb }>(
+        "SELECT data FROM app_state WHERE id = $1",
+        [dbStateId]
       )
-    `)
-    const result = await pgPool.query<{ data: DemoDb }>(
-      "SELECT data FROM app_state WHERE id = $1",
-      [dbStateId]
-    )
-    if (result.rows[0]?.data) {
-      return result.rows[0].data
+      if (result.rows[0]?.data) {
+        return result.rows[0].data
+      }
+      return await seedDb()
+    } catch (error) {
+      return getFallbackDb()
     }
-    return seedDb()
   }
 
   try {
@@ -280,15 +304,19 @@ const readDb = async (): Promise<DemoDb> => {
 
 const writeDb = async (data: DemoDb) => {
   if (hasPostgres && pgPool) {
-    await pgPool.query(
-      `
-        INSERT INTO app_state (id, data, updated_at)
-        VALUES ($1, $2::jsonb, NOW())
-        ON CONFLICT (id)
-        DO UPDATE SET data = EXCLUDED.data, updated_at = NOW()
-      `,
-      [dbStateId, JSON.stringify(data)]
-    )
+    try {
+      await pgPool.query(
+        `
+          INSERT INTO app_state (id, data, updated_at)
+          VALUES ($1, $2::jsonb, NOW())
+          ON CONFLICT (id)
+          DO UPDATE SET data = EXCLUDED.data, updated_at = NOW()
+        `,
+        [dbStateId, JSON.stringify(data)]
+      )
+    } catch (error) {
+      setFallbackDb(data)
+    }
     return
   }
 
