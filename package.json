@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "db:import": "node --env-file=.env.local scripts/import-demo-db.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
