@@ -11,7 +11,7 @@ import { ListingCard } from "@/components/listing-card"
 import { getTagColor } from "@/lib/tag-colors"
 import { cn } from "@/lib/utils"
 import type { Listing, Tag, User } from "@/lib/types"
-import { authHeaders } from "@/lib/demo-client"
+import { authHeaders, readJsonSafe } from "@/lib/demo-client"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
@@ -60,7 +60,13 @@ export default function ProfilePage({
           },
         })
 
-        const payload = (await response.json()) as {
+        const payload = ((await readJsonSafe<{
+          user?: User
+          currentUserId?: string | null
+          listings?: Listing[]
+          claimedListings?: Listing[]
+          error?: string
+        }>(response)) ?? {}) as {
           user?: User
           currentUserId?: string | null
           listings?: Listing[]
@@ -133,7 +139,8 @@ export default function ProfilePage({
         return
       }
 
-      const payload = (await response.json()) as { user?: User; error?: string }
+      const payload = ((await readJsonSafe<{ user?: User; error?: string }>(response)) ??
+        {}) as { user?: User; error?: string }
       if (!response.ok || !payload.user) {
         throw new Error(payload.error ?? "Unable to update profile")
       }
@@ -186,7 +193,8 @@ export default function ProfilePage({
         return
       }
 
-      const payload = (await response.json()) as { listing?: Listing; error?: string }
+      const payload = ((await readJsonSafe<{ listing?: Listing; error?: string }>(response)) ??
+        {}) as { listing?: Listing; error?: string }
       if (!response.ok || !payload.listing) {
         throw new Error(payload.error ?? "Unable to update listing")
       }
@@ -220,7 +228,9 @@ export default function ProfilePage({
       }
 
       if (!response.ok) {
-        const payload = (await response.json()) as { error?: string }
+        const payload = ((await readJsonSafe<{ error?: string }>(response)) ?? {}) as {
+          error?: string
+        }
         throw new Error(payload.error ?? "Unable to delete listing")
       }
 

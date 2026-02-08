@@ -5,7 +5,7 @@ import { usePathname, useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import { Home, Plus, MessageCircle, User, LogIn, LogOut } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { authHeaders, clearSessionToken } from "@/lib/demo-client"
+import { authHeaders, clearSessionToken, readJsonSafe } from "@/lib/demo-client"
 import type { Conversation, User as AppUser } from "@/lib/types"
 
 export function MobileNav() {
@@ -46,7 +46,9 @@ export function MobileNav() {
           return
         }
 
-        const payload = (await response.json()) as { user?: AppUser }
+        const payload = ((await readJsonSafe<{ user?: AppUser }>(response)) ?? {}) as {
+          user?: AppUser
+        }
         if (!payload.user) {
           if (isMounted) {
             setCurrentUser(null)
@@ -73,7 +75,9 @@ export function MobileNav() {
           return
         }
 
-        const conversationsPayload = (await conversationsResponse.json()) as {
+        const conversationsPayload = ((await readJsonSafe<{ conversations?: Conversation[] }>(
+          conversationsResponse
+        )) ?? {}) as {
           conversations?: Conversation[]
         }
         const unread = (conversationsPayload.conversations ?? []).reduce(

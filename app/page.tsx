@@ -7,7 +7,7 @@ import { FilterBar } from "@/components/filter-bar"
 import { Search } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import type { Listing } from "@/lib/types"
-import { authHeaders } from "@/lib/demo-client"
+import { authHeaders, readJsonSafe } from "@/lib/demo-client"
 import { cn } from "@/lib/utils"
 
 function getSchoolKeyFromEmail(email: string | null): "gt" | "uga" | null {
@@ -47,7 +47,9 @@ export default function HomePage() {
           fetch("/api/auth/me", { headers: { ...authHeaders() } }),
         ])
 
-        const payload = (await listingsResponse.json()) as {
+        const payload = ((await readJsonSafe<{ listings?: Listing[]; error?: string }>(
+          listingsResponse
+        )) ?? {}) as {
           listings?: Listing[]
           error?: string
         }
@@ -62,7 +64,9 @@ export default function HomePage() {
         }
 
         if (isMounted && meResponse.ok) {
-          const mePayload = (await meResponse.json()) as { user?: { id: string; email: string } }
+          const mePayload = ((await readJsonSafe<{ user?: { id: string; email: string } }>(
+            meResponse
+          )) ?? {}) as { user?: { id: string; email: string } }
           setCurrentUserId(mePayload.user?.id ?? null)
           setCurrentUserEmail(mePayload.user?.email ?? null)
         }

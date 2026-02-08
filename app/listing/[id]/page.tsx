@@ -20,7 +20,7 @@ import { Separator } from "@/components/ui/separator"
 import { cn } from "@/lib/utils"
 import { getTagColor } from "@/lib/tag-colors"
 import type { Conversation, Listing } from "@/lib/types"
-import { authHeaders } from "@/lib/demo-client"
+import { authHeaders, readJsonSafe } from "@/lib/demo-client"
 import {
   Carousel,
   CarouselContent,
@@ -69,7 +69,8 @@ export default function ListingDetailPage({
     const loadListing = async () => {
       try {
         const response = await fetch(`/api/listings/${id}`)
-        const payload = (await response.json()) as {
+        const payload = ((await readJsonSafe<{ listing?: Listing; error?: string }>(response)) ??
+          {}) as {
           listing?: Listing
           error?: string
         }
@@ -132,7 +133,9 @@ export default function ListingDetailPage({
           return
         }
 
-        const payload = (await response.json()) as { user?: { id: string } }
+        const payload = ((await readJsonSafe<{ user?: { id: string } }>(response)) ?? {}) as {
+          user?: { id: string }
+        }
         if (isMounted && payload.user) {
           setCurrentUserId(payload.user.id)
         }
@@ -164,7 +167,8 @@ export default function ListingDetailPage({
         })
         if (!response.ok) return
 
-        const payload = (await response.json()) as { conversations?: Conversation[] }
+        const payload = ((await readJsonSafe<{ conversations?: Conversation[] }>(response)) ??
+          {}) as { conversations?: Conversation[] }
         if (!payload.conversations || !isMounted) return
 
         const byId = new Map<string, { id: string; name: string }>()
@@ -263,7 +267,10 @@ export default function ListingDetailPage({
         return
       }
 
-      const payload = (await response.json()) as {
+      const payload = ((await readJsonSafe<{
+        conversation?: { id: string }
+        error?: string
+      }>(response)) ?? {}) as {
         conversation?: { id: string }
         error?: string
       }
@@ -302,7 +309,8 @@ export default function ListingDetailPage({
         return
       }
 
-      const payload = (await response.json()) as { listing?: Listing; error?: string }
+      const payload = ((await readJsonSafe<{ listing?: Listing; error?: string }>(response)) ??
+        {}) as { listing?: Listing; error?: string }
       if (!response.ok || !payload.listing) {
         throw new Error(payload.error ?? "Unable to update listing")
       }

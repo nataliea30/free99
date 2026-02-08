@@ -11,7 +11,7 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 import { Separator } from "@/components/ui/separator"
 import type { Conversation, Message } from "@/lib/types"
 import { cn } from "@/lib/utils"
-import { authHeaders } from "@/lib/demo-client"
+import { authHeaders, readJsonSafe } from "@/lib/demo-client"
 import { useRouter, useSearchParams } from "next/navigation"
 
 function getConversationStatusLabel(conversation: Conversation): string {
@@ -220,7 +220,11 @@ function MessagesPageContent() {
           return
         }
 
-        const payload = (await response.json()) as {
+        const payload = ((await readJsonSafe<{
+          conversations?: Conversation[]
+          currentUser?: { id: string }
+          error?: string
+        }>(response)) ?? {}) as {
           conversations?: Conversation[]
           currentUser?: { id: string }
           error?: string
@@ -277,7 +281,9 @@ function MessagesPageContent() {
           return
         }
 
-        const payload = (await response.json()) as {
+        const payload = ((await readJsonSafe<{ conversation?: Conversation; error?: string }>(
+          response
+        )) ?? {}) as {
           conversation?: Conversation
           error?: string
         }
@@ -334,7 +340,8 @@ function MessagesPageContent() {
           body: formData,
         })
 
-        const payload = (await response.json()) as { url?: string; error?: string }
+        const payload = ((await readJsonSafe<{ url?: string; error?: string }>(response)) ??
+          {}) as { url?: string; error?: string }
         if (!response.ok || !payload.url) {
           throw new Error(payload.error ?? "Unable to upload image")
         }
@@ -394,7 +401,10 @@ function MessagesPageContent() {
         return
       }
 
-      const payload = (await response.json()) as {
+      const payload = ((await readJsonSafe<{
+        conversation?: Conversation
+        error?: string
+      }>(response)) ?? {}) as {
         conversation?: Conversation
         error?: string
       }

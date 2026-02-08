@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Separator } from "@/components/ui/separator"
-import { setSessionToken } from "@/lib/demo-client"
+import { readJsonSafe, setSessionToken } from "@/lib/demo-client"
 
 export default function LoginPage() {
   const router = useRouter()
@@ -30,7 +30,8 @@ export default function LoginPage() {
         body: JSON.stringify({ email, password }),
       })
 
-      const payload = (await response.json()) as {
+      const payload = ((await readJsonSafe<{ token?: string; error?: string }>(response)) ??
+        {}) as {
         token?: string
         error?: string
       }

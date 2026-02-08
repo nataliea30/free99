@@ -20,7 +20,7 @@ import { categories, conditions, tags } from "@/lib/mock-data"
 import { cn } from "@/lib/utils"
 import { getTagColor } from "@/lib/tag-colors"
 import Link from "next/link"
-import { authHeaders } from "@/lib/demo-client"
+import { authHeaders, readJsonSafe } from "@/lib/demo-client"
 import { useRouter } from "next/navigation"
 
 export default function CreateListingPage() {
@@ -142,7 +142,8 @@ export default function CreateListingPage() {
           body: formData,
         })
 
-        const payload = (await response.json()) as { url?: string; error?: string }
+        const payload = ((await readJsonSafe<{ url?: string; error?: string }>(response)) ??
+          {}) as { url?: string; error?: string }
         if (!response.ok || !payload.url) {
           throw new Error(payload.error ?? "Unable to upload image")
         }
@@ -192,7 +193,9 @@ export default function CreateListingPage() {
         }),
       })
 
-      const payload = (await response.json()) as { listing?: { id: string }; error?: string }
+      const payload = ((await readJsonSafe<{ listing?: { id: string }; error?: string }>(
+        response
+      )) ?? {}) as { listing?: { id: string }; error?: string }
 
       if (response.status === 401) {
         router.push("/auth/login")
@@ -240,7 +243,10 @@ export default function CreateListingPage() {
         return
       }
 
-      const payload = (await response.json()) as {
+      const payload = ((await readJsonSafe<{
+        description?: string
+        error?: string
+      }>(response)) ?? {}) as {
         description?: string
         error?: string
       }
