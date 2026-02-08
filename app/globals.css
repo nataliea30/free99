@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 44 100% 90%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 45 97% 53%;
+    --primary-foreground: 0 0% 10%;
+    --secondary: 44 100% 95%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 44 80% 96%;
+    --muted-foreground: 40 15% 35%;
+    --accent: 36 92% 53%;
+    --accent-foreground: 0 0% 10%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 43 35% 80%;
+    --input: 43 35% 80%;
+    --ring: 36 92% 53%;
+    --radius: 0.75rem;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 10%;
+    --sidebar-primary: 45 97% 53%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 44 100% 95%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 43 35% 80%;
+    --sidebar-ring: 36 92% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Page transition */
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-fade-in {
+  animation: page-fade-in 350ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Staggered float-in for cards & sections */
+@keyframes float-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float-up {
+  animation: float-up 400ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Stagger delays */
+.stagger-1 { animation-delay: 50ms; }
+.stagger-2 { animation-delay: 100ms; }
+.stagger-3 { animation-delay: 150ms; }
+.stagger-4 { animation-delay: 200ms; }
+.stagger-5 { animation-delay: 250ms; }
+.stagger-6 { animation-delay: 300ms; }
+.stagger-7 { animation-delay: 350ms; }
+.stagger-8 { animation-delay: 400ms; }
+
+/* Fade-in for hero / headers */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fade-in 500ms ease-out both;
+}
+
+/* Scale-in for badges and pills */
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-pop-in {
+  animation: pop-in 300ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Custom smooth easing for hover transitions */
+.ease-smooth {
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
